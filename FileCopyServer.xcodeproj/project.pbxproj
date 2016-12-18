@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6CAF255F1D386EB300C4049B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF255E1D386EB300C4049B /* main.cpp */; };
+		6CAF25661D386EE200C4049B /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF25651D386EE200C4049B /* Makefile */; };
+		6CAF25691D386F2800C4049B /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF25671D386F2800C4049B /* Server.cpp */; };
+		6CC14FEE1D513A0600641699 /* Connection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CC14FEC1D513A0600641699 /* Connection.cpp */; };
+		6CD91D1F1D52749C0078AC5A /* threadmain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CD91D1D1D52749C0078AC5A /* threadmain.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,13 @@
 /* Begin PBXFileReference section */
 		6CAF255B1D386EB300C4049B /* FileCopyServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FileCopyServer; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAF255E1D386EB300C4049B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6CAF25651D386EE200C4049B /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = FileCopyServer/Makefile; sourceTree = SOURCE_ROOT; usesTabs = 1; };
+		6CAF25671D386F2800C4049B /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cpp; sourceTree = "<group>"; };
+		6CAF25681D386F2800C4049B /* Server.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Server.hpp; sourceTree = "<group>"; };
+		6CC14FEC1D513A0600641699 /* Connection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Connection.cpp; sourceTree = "<group>"; };
+		6CC14FED1D513A0600641699 /* Connection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Connection.hpp; sourceTree = "<group>"; };
+		6CD91D1D1D52749C0078AC5A /* threadmain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = threadmain.cpp; sourceTree = "<group>"; };
+		6CD91D1E1D52749C0078AC5A /* threadmain.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = threadmain.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,13 @@
 			isa = PBXGroup;
 			children = (
 				6CAF255E1D386EB300C4049B /* main.cpp */,
+				6CAF25681D386F2800C4049B /* Server.hpp */,
+				6CAF25671D386F2800C4049B /* Server.cpp */,
+				6CD91D1D1D52749C0078AC5A /* threadmain.cpp */,
+				6CD91D1E1D52749C0078AC5A /* threadmain.hpp */,
+				6CC14FEC1D513A0600641699 /* Connection.cpp */,
+				6CC14FED1D513A0600641699 /* Connection.hpp */,
+				6CAF25651D386EE200C4049B /* Makefile */,
 			);
 			path = FileCopyServer;
 			sourceTree = "<group>";
@@ -119,7 +137,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD91D1F1D52749C0078AC5A /* threadmain.cpp in Sources */,
+				6CAF25661D386EE200C4049B /* Makefile in Sources */,
+				6CAF25691D386F2800C4049B /* Server.cpp in Sources */,
 				6CAF255F1D386EB300C4049B /* main.cpp in Sources */,
+				6CC14FEE1D513A0600641699 /* Connection.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +264,7 @@
 				6CAF25641D386EB300C4049B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
