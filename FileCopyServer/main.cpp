@@ -55,9 +55,11 @@ int main(int argc, const char * argv[]) {
 #endif
                 // Our folder name as a C++ string.
                 std::string folderName = folderNameCStr;
-                // Create new server objects.
+                // Create new server objects and set them up.
                 FileCopy::Server *serverIPv4 = new FileCopy::Server("0.0.0.0", "7979", folderName);
                 FileCopy::Server *serverIPv6 = new FileCopy::Server("::", "7979", folderName);
+                serverIPv4->setupServer();
+                serverIPv6->setupServer();
                 // Create threads for our server for both IPv4 and IPv6.
 #ifdef _WIN32
                 // Create our threads using CreateThread.

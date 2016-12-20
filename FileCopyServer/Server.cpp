@@ -44,17 +44,12 @@ namespace FileCopy {
         // Set IP address and port to defaults.
         ipAddress = "";
         port = "7979";
-        
-        // Setup server.
-        setupServer();
     }
     Server::Server(std::string theAddress, std::string thePort, std::string theFolder) {
         // Set IP address and port
         ipAddress = theAddress;
         port = thePort;
         folderPath = theFolder;
-        // Setup server.
-        setupServer();
     }
     // Getters and setters.
     std::string Server::getIPAddress() {
@@ -146,7 +141,6 @@ namespace FileCopy {
             std::cerr << gai_strerror(result) << std::endl;
             return false;
         }
-        
         // Call socket to create our new socket file descriptor.
         sockfd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
         // Make sure we have a valid socket file descriptor.
@@ -158,7 +152,14 @@ namespace FileCopy {
             // Return.
             return false;
         }
-        
+        // Set the socket option, if IPv6, to IPv6 only.
+        if (res->ai_family == AF_INET6) {
+            int IPV6Only = 1;
+            if (setsockopt(sockfd, IPPROTO_IPV6, IPV6_V6ONLY, &IPV6Only, sizeof(IPV6Only)) == -1) {
+                perror("Error");
+                return false;
+            }
+        }
         // Bind our socket to its port
         if (bind(sockfd, (struct sockaddr *)res->ai_addr, res->ai_addrlen) != 0) {
             // Print an error, because we have one.

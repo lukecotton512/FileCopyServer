@@ -35,7 +35,6 @@ namespace FileCopy {
         bool keepGoing;
 		FileCopySocket sockfd;
         // Private methods.
-        bool setupServer();
         void takeDownServer();
         
     public:
@@ -50,6 +49,8 @@ namespace FileCopy {
         // Server methods.
         void start();
         void stop();
+        // Setup methods.
+        bool setupServer();
     };
 }
 #endif /* Server_hpp */
