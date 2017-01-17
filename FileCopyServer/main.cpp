@@ -38,7 +38,7 @@ int main(int argc, const char * argv[]) {
             perror("Error");
         } else {
             // Check the stat structure to make sure we are a folder.
-            if (S_ISDIR(statStruct.st_mode)) {
+            if ((statStruct.st_mode & S_IFMT) == S_IFDIR) {
                 // Tell the user how to exit.
                 std::cout << "Press a key at any time to exit." << std::endl;
 #ifdef _WIN32

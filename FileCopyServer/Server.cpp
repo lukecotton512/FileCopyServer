@@ -152,7 +152,8 @@ namespace FileCopy {
             // Return.
             return false;
         }
-        // Set the socket option, if IPv6, to IPv6 only.
+#ifndef _WIN32
+        // Set the socket option, if IPv6, to IPv6 only on Unix systems.
         if (res->ai_family == AF_INET6) {
             int IPV6Only = 1;
             if (setsockopt(sockfd, IPPROTO_IPV6, IPV6_V6ONLY, &IPV6Only, sizeof(IPV6Only)) == -1) {
@@ -160,6 +161,7 @@ namespace FileCopy {
                 return false;
             }
         }
+#endif
         // Bind our socket to its port
         if (bind(sockfd, (struct sockaddr *)res->ai_addr, res->ai_addrlen) != 0) {
             // Print an error, because we have one.
